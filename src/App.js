@@ -55,15 +55,21 @@ function App ()
         } }>
             <Route exact path="/login" render={ () => <div>
                 <div className="container">
-                    <h1>Autenticação do usuário</h1>
+                    <h1 className="pt-4 text-center">Autenticação do usuário</h1>
                     { loginInvalido && (<p style={ { color: "red" } }> Usuário e/ou senha inválido(s)! Tente novamente</p>) }
-                    <div className="form-floating mb-3">
-                        <input type="text" className="form-control" id="user" placeholder="Usuário" value={ nome } onChange={ (e) => setNome(e.target.value) }></input>
-                        <label for="user">Usuário</label>
-                    </div>
-                    <div className="form-floating mb-3">
-                        <input type="password" className="form-control" id="pass" placeholder="Senha" value={ senha } onChange={ (e) => setSenha(e.target.value) }></input>
-                        <label for="pass">Senha</label>
+                    <div className="row">
+                        <div className="col-6">
+                            <div className="form-floating mb-3">
+                                <input type="text" className="form-control" id="user" placeholder="Usuário" value={ nome } onChange={ (e) => setNome(e.target.value) }></input>
+                                <label htmlFor="user">Usuário</label>
+                            </div>
+                        </div>
+                        <div className="col-6">
+                            <div className="form-floating mb-3">
+                                <input type="password" className="form-control" id="pass" placeholder="Senha" value={ senha } onChange={ (e) => setSenha(e.target.value) }></input>
+                                <label htmlFor="pass">Senha</label>
+                            </div>
+                        </div>
                     </div>
                     <button className="btn btn-secondary my-2 w-100" onClick={ validarAcesso }>Acessar</button>
                 </div>
